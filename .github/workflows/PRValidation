@@ -1,0 +1,15 @@
+name: PR Validation
+
+on:
+    pull_request:
+
+jobs:
+    validate:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Display PR Title
+              env:
+                PR_TITLE: ${{ github.event.pull_request.title }}
+              run: |
+                echo "Pull Request Title: $PR_TITLE"
